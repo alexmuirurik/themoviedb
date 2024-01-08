@@ -1,0 +1,114 @@
+:root{
+  --mdb-sidebar-width: 220px;
+  --mdb-sidebar-color: #fff;
+  --bs-link-color: #fff;
+  --bs-heading-color: #fff;
+  --bs-card-color: #fff;
+}
+
+body,
+body a{
+  color: var(--mdb-sidebar-color);
+}
+
+body .card{
+  background: rgba(var(--bs-black-rgb),var(--bs-bg-opacity)) !important;
+}
+
+/* ---------------------------
+  Sidebar Section
+----------------------------*/
+.sidebar-wrapper{
+  position: relative;
+  width: var(--mdb-sidebar-width);
+}
+
+@media (max-width: 992px) {
+  :root{
+    --mdb-sidebar-width: 0px;
+  }
+
+  .sidebar-wrapper:not(.show){
+    display: none;
+  }
+
+  .sidebar-wrapper.show{
+    --mdb-sidebar-width: 190px;
+  }
+}
+
+.sidebar-wrapper .sidebar{
+  position: fixed;
+  background: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity)) !important;
+  width: calc(var(--mdb-sidebar-width) - 10px);
+  left: 5px;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  border-radius: 5px;
+  height: 95svh;
+  z-index: 999;
+}
+
+.sidebar-wrapper .sidebar .sidebar-header{
+  display: flex;
+  padding-left: 20px;
+  height: 70px;
+}
+
+.sidebar-wrapper .sidebar .sidebar-header .sidebar-brand{
+  color: chocolate;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: xx-large;
+  padding: 5px;
+}
+
+.sidebar-wrapper .sidebar .navbar-nav .nav-item{
+  border-bottom: 1px solid lightgray;
+}
+
+.sidebar-wrapper .sidebar .navbar-nav .nav-item .nav-link{
+  display: inline-flex;
+  color: var(--mdb-sidebar-color);
+  align-items: center;
+  padding-left: 15px;
+}
+
+.sidebar-wrapper .sidebar .sidebar-header i,
+.sidebar-wrapper .sidebar .navbar-nav .nav-item .nav-link i{
+  padding: 5px 10px;
+}
+
+.sidebar-wrapper .sidebar .navbar-nav .nav-item .nav-link p{
+  padding-top: 10px;
+}
+
+/* ---------------------------
+  Navbar Section
+----------------------------*/
+.navbar{
+  position: relative;
+  width: calc(100% - var(--mdb-sidebar-width));
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
+  height: 70px;
+  left: var(--mdb-sidebar-width);
+}
+
+/* ---------------------------
+  Main Section
+----------------------------*/
+main{
+  position: relative;
+  width: calc(100% - var(--mdb-sidebar-width));
+  left: var(--mdb-sidebar-width);
+}
+
+/* ---------------------------
+  Footer Section
+----------------------------*/
+footer{
+  position: relative;
+  width: calc(100% - var(--mdb-sidebar-width));
+  left: var(--mdb-sidebar-width);
+}

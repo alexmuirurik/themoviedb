@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './templates/home'
+import Contact from './templates/contact'
+import Single from './templates/single'
+import Index from './templates/index'
+import Search from "./templates/search";
+import Category from './templates/category'
+import About from './templates/about'
+import NoPage from './templates/nopage' 
 
-function App() {
+function App() { 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/home" element={<Home />} />
+
+        <Route path="/movie" element={<Index/>} />
+        <Route path="/tv" element={<Index />} />
+
+        <Route path="/movie/:id" element={<Single />} />
+        <Route path="/tv/:id" element={<Single />} />
+
+        <Route path="/now_playing" element={<Category />} />
+        <Route path="/top_rated" element={<Category />} />
+ 
+        <Route path="/search/" element={<Search />} />
+        
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
   );
+
 }
 
 export default App;
