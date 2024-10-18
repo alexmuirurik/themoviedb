@@ -1,6 +1,6 @@
 {
   "name": "movie",
-  "homepage": "https://alexmuirurik.github.com/themoviedb",
+  "homepage": "https://alexmuirurik.github.io/themoviedb",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
