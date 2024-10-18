@@ -1,8 +1,10 @@
+import React from 'react'
 import { useLocation, useParams, useSearchParams } from 'react-router-dom'
-import { Listrender, Singlerender } from '../func'
-import Header from '../temparts/header'
-import Sidebar from '../temparts/sidebar'
-import Footer from '../temparts/footer'
+import Header from '../temparts/header.tsx'
+import Sidebar from '../temparts/sidebar.tsx'
+import Footer from '../temparts/footer.tsx'
+import SingleRender from '../components/singlerender.tsx'
+import ListRender from '../components/listrender.tsx'
 
 const Single = (params) => {
     const {id} = useParams()
@@ -17,10 +19,10 @@ const Single = (params) => {
                 <div className="container" id={id}>
                     <div className="row movierow">
                         <div className="col-12 mb-3">
-                            <Singlerender url={'https://api.themoviedb.org/3'+location.pathname} id={id}/>
+                            <SingleRender url={'https://api.themoviedb.org/3'+location.pathname} id={id}/>
                         </div> 
-                        <div className="border-top"></div>
-                        <Listrender url={'https://api.themoviedb.org/3/'+location.pathname+'/similar'} type={'/'+first} />         
+                        <div className="py-2"></div>
+                        <ListRender url={'https://api.themoviedb.org/3/'+location.pathname+'/similar'} type={'/'+first} />         
                     </div>
                 </div>
             </main>

@@ -1,9 +1,9 @@
+import React from 'react'
 import { useLocation, useParams} from 'react-router-dom'
-import { useEffect} from 'react'
-import { Listrender } from '../func'
-import Header from '../temparts/header'
-import Sidebar from '../temparts/sidebar'
-import Footer from '../temparts/footer'
+import Header from '../temparts/header.tsx'
+import Sidebar from '../temparts/sidebar.tsx'
+import Footer from '../temparts/footer.tsx'
+import ListRender from '../components/listrender.tsx'
 
 const Toprated = () => {
     const location = useLocation()
@@ -15,8 +15,8 @@ const Toprated = () => {
             <main className="main">
                 <div className="container">
                     <div className="row movierow">
-                        <Listrender url = {'https://api.themoviedb.org/3/tv'+pathname} type={'/tv'} />  
-                        <Listrender url = {'https://api.themoviedb.org/3/movie'+location.pathname} type={'/movie'} />                  
+                        <ListRender url = {'https://api.themoviedb.org/3/tv'+pathname} type={'/tv'} />  
+                        <ListRender url = {'https://api.themoviedb.org/3/movie'+location.pathname} type={'/movie'} />                  
                     </div>
                 </div>
             </main>
